@@ -1,11 +1,12 @@
 public class PracticeDecisions {
     public static void main(String[] args) {
 
-        boolean coldOutside = false;
+        //boolean coldOutside = false;
+        double temperature = 55;
         
-        if(coldOutside)
+        if(temperature < 65)
             System.out.println("Wear a coat");
-            
+             
 
     }
 }
