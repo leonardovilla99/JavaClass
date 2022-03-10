@@ -36,7 +36,7 @@ public class SoundSpeed {
         // time = distance / speed
         time = distance / speed;
 
-        // print time
+        // print time .3f%n
         if(speed != 0){
             System.out.printf("The time for the soundwave to travel is going to be %.3sf seconds \n", time);
         }
