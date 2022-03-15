@@ -14,41 +14,40 @@ import java.util.Scanner;
 public class midTerm {
     public static void main(String[] args) {
 
-        Scanner keyboard = new Scanner(System.in);
+        try (Scanner keyboard = new Scanner(System.in)) {
+            // Initialize variable
+            Double inv, interest, total;
 
-        // Initialize variable
-        Double inv, interest, total;
+            System.out.println("How much do you want to invest ($)?");
+            inv = keyboard.nextDouble();
 
-        System.out.println("How much do you want to invest ($)?");
-        inv = keyboard.nextDouble();
-
-        // Calculate investment and total
-        if(inv < 20000.0){
-            System.out.println("The minimum investment is $20000.00");
-        }else{
-            if(inv < 100000.0){
-                if(inv < 50000.0){
-                    interest = inv * 0.15;
-                }else{
-                    interest = inv * 0.20;
-                }
+            // Calculate investment and total
+            if(inv < 20000.0){
+                System.out.println("The minimum investment is $20000.00");
             }else{
-                if(inv < 200000.0){
-                    interest = inv * 0.25;
+                if(inv < 100000.0){
+                    if(inv < 50000.0){
+                        interest = inv * 0.15;
+                    }else{
+                        interest = inv * 0.20;
+                    }
                 }else{
-                    interest = inv * 0.30;
+                    if(inv < 200000.0){
+                        interest = inv * 0.25;
+                    }else{
+                        interest = inv * 0.30;
+                    }
                 }
+
+                total = inv + interest;
+                
+                // Display
+                System.out.println("After a year the bank is going to give you:");
+                System.out.printf("Investment: $%.2f\n", inv);
+                System.out.printf("Interest: $%.2f\n", interest);
+                System.out.printf("Total: $%.2f\n", total);
+
             }
-
-            total = inv + interest;
-            
-            // Display
-            System.out.println("After a year the bank is going to give you:");
-            System.out.printf("Investment: $%.2f\n", inv);
-            System.out.printf("Interest: $%.2f\n", interest);
-            System.out.printf("Total: $%.2f\n", total);
-
         }
-
     }
 }
