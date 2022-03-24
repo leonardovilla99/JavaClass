@@ -6,22 +6,22 @@ public class Hotel {
         int numOfRooms, numOfRoomsOcc, totalRooms = 0,totalRoomsOcc = 0,numOfFloors;
         double occupacyRate;
 
-        Scanner keyboard = new Scanner(System.in);
+        try (Scanner keyboard = new Scanner(System.in)) {
+            System.out.println("Enter the number of floors: ");
+            numOfFloors = keyboard.nextInt();
 
-        System.out.println("Enter the number of floors: ");
-        numOfFloors = keyboard.nextInt();
+            for(int floorNum = 1; floorNum <= numOfFloors; floorNum++){
 
-        for(int floorNum = 1; floorNum <= numOfFloors; floorNum++){
+                System.out.println("Enter the number of room in floor " + floorNum + ": ");
+                numOfRooms = keyboard.nextInt();
 
-            System.out.println("Enter the number of room in floor " + floorNum + ": ");
-            numOfRooms = keyboard.nextInt();
+                totalRooms = totalRooms + numOfRooms;
 
-            totalRooms = totalRooms + numOfRooms;
+                System.out.println("How many are occupied? ");
+                numOfRoomsOcc = keyboard.nextInt();
 
-            System.out.println("How many are occupied? ");
-            numOfRoomsOcc = keyboard.nextInt();
-
-            totalRoomsOcc = totalRoomsOcc + numOfRoomsOcc;
+                totalRoomsOcc = totalRoomsOcc + numOfRoomsOcc;
+            }
         }
 
         System.out.println("# rooms: " + totalRooms);

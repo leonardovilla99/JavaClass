@@ -13,8 +13,7 @@ public class Rainfall {
         numOfYears = keyboard.nextInt();
 
         // For each years
-        for(int years = 1
-        ; years <= numOfYears; years++){
+        for(int years = 1; years <= numOfYears; years++){
             // For each months
             for(int months = 1; months <= 12; months ++){
                 
